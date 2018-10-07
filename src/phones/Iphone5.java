@@ -10,11 +10,12 @@ public class Iphone5 extends Iphone {
     @Override
     public void call(String number) {
         super.call(number);
-        System.out.println("Iphone is calling " + number);
+        System.out.println("Iphone5 is calling " + number);
     }
 
     @Override
     public void sendSms(String number, String message) {
         System.out.println("Iphone5 class is sending SMS " + message + " to " + number);
+        smsCounter++;
     }
 }

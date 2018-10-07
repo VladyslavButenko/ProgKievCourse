@@ -18,5 +18,6 @@ public class Iphone extends Phone {
     @Override
     public void sendSms(String number, String message) {
         System.out.println("Iphone5 class is sending SMS " + message + " to " + number);
+        smsCounter++;
     }
 }
