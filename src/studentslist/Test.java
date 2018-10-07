@@ -11,8 +11,10 @@ public class Test {
 
         int n = sl.findByName("Vova");
         int surnameFind = sl.findBySurname("Pupkin"); //Вызов метода поиска по фамилии.
+        int birthFind = sl.findByBirth(new Date(1970,3,28)); //Вызов метода поиска по дате рождения.
 
         System.out.println(sl.get(n).getBirth().toString());
         System.out.println(sl.get(surnameFind).getBirth().toString());
+        System.out.println(sl.get(birthFind).getBirth().toString());
     }
 }

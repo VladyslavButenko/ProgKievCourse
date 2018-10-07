@@ -1,5 +1,7 @@
 package studentslist;
 
+import java.util.Date;
+
 public class StudentList {
     private Student[] list = new Student[100];
     private int index = 0;
@@ -23,6 +25,14 @@ public class StudentList {
     public int findBySurname(String surname) { //Поиск по фамилии
         for (int i = 0; i < index; i++) {
             if (list[i].getSurname().equalsIgnoreCase(surname))
+                return i;
+        }
+        return -1;
+    }
+
+    public int findByBirth(Date date) { //Поиск по дате рождения.
+        for (int i = 0; i < index; i++) {
+            if (list[i].getBirth().equals(date))
                 return i;
         }
         return -1;
