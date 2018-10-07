@@ -1,13 +1,20 @@
 package studentslist;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class StudentList {
     private Student[] list = new Student[100];
     private int index = 0;
 
-    public void add(Student s) {
-        list[index++] = s;
+    public void add(Student s) { //Измененный метод add.
+        if (index < list.length){
+            list[index++] = s;
+        }else {
+            Student[] tmp = list;
+            list = Arrays.copyOf(tmp,tmp.length*3/2+1);
+        }
+
     }
 
     public Student get(int i) {
