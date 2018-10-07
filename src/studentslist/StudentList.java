@@ -14,28 +14,54 @@ public class StudentList {
         return list[i];
     }
 
-    public int findByName(String name) {
-        for (int i = 0; i < index; i++) {
-            if(list[i].getName().equalsIgnoreCase(name))
-                return i;
+    public int[] findByName(String... names) { //Метод поиска по именам.
+        int length = names.length;
+        int[] indexes = new int[length];
+        int hit;
+        int count = 0;
+        for (int a = 0; a < length; a++) {
+            hit = -1;
+            for (int b = 0; b < index; b++) {
+                if (names[a].equalsIgnoreCase(list[b].getName()))
+                    hit = b;
+            }
+            indexes[count++] = hit;
         }
-        return -1;
+        return indexes;
     }
 
-    public int findBySurname(String surname) { //Поиск по фамилии
-        for (int i = 0; i < index; i++) {
-            if (list[i].getSurname().equalsIgnoreCase(surname))
-                return i;
+    public int[] findBySurname(String... surnames) { //Метод поиска по фамилиям.
+        int length = surnames.length;
+        int[] indexes = new int[length];
+        int hit;
+        int count = 0;
+        for (int a = 0; a < length; a++) {
+            hit = -1;
+            for (int b = 0; b < index; b++) {
+                if (surnames[a].equalsIgnoreCase(list[b].getSurname()))
+                    hit = b;
+            }
+            indexes[count++] = hit;
         }
-        return -1;
+        return indexes;
+
     }
 
-    public int findByBirth(Date date) { //Поиск по дате рождения.
-        for (int i = 0; i < index; i++) {
-            if (list[i].getBirth().equals(date))
-                return i;
+    public int[] findByBirth(Date... birthdays) { //Метод поиска по датам рождения.
+        int length = birthdays.length;
+        int[] indexes = new int[length];
+        int hit;
+        int count = 0;
+        for (int a = 0; a < length; a++) {
+            hit = -1;
+            for (int b = 0; b < index; b++) {
+                if (birthdays[a].equals(list[b].getBirth()))
+                    hit = b;
+            }
+            indexes[count++] = hit;
         }
-        return -1;
+        return indexes;
     }
+
 
 }
