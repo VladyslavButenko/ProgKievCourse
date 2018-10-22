@@ -1,4 +1,4 @@
-package human;
+package human.human;
 
 import java.util.Date;
 
@@ -16,6 +16,10 @@ public class Human {
         this.birthday = birthday;
         this.position = position;
         this.salary = salary;
+    }
+
+    public Human() {
+
     }
 
     public String getName() {
